@@ -19,14 +19,14 @@ spring:
         livereload:
             enabled: false # we use Grunt + BrowserSync for livereload
     datasource:
-        driver-class-name: org.h2.jdbcx.JdbcDataSource
-        url: jdbc:h2:mem:sample1;DB_CLOSE_DELAY=-1
+        driver-class-name: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+        url: jdbc:mysql://localhost:3306/chi?useUnicode=true&characterEncoding=utf8
         name:
-        username: 
-        password:
+        username: root
+        password: hal9000
     jpa:
-        database-platform: com.mycompany.myapp.domain.util.FixedH2Dialect
-        database: H2
+        database-platform: org.hibernate.dialect.MySQLInnoDBDialect
+        database: MYSQL
         show_sql: true
         properties:
             hibernate.cache.use_second_level_cache: true
