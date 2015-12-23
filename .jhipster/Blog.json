@@ -1,0 +1,29 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "body",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "publishon",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "created",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20151223153317",
+    "dto": "no",
+    "service": "serviceImpl",
+    "pagination": "pagination"
+}
