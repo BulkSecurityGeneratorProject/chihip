@@ -1,0 +1,40 @@
+.fblock-2 .fa {
+  behavior: url(js/PIE.htc); 
+  position: relative;	
+}
+
+.camera_loader {
+  behavior: url(js/PIE.htc); 
+  position: absolute;
+}
+
+#toTop {
+  behavior: url(js/PIE.htc); 
+  position: fixed;
+}
+
+.bg-img-1 { background-position: 0 -1400px; }
+.bg-img-2 { background-position: 0 -355px; }
+
+.block-2_s2 {
+	padding-left: 10px;
+	padding-right: 10px;
+	background: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#cc272727', endColorstr='#cc272727');
+}
+
+.block-2_hover:hover .block-2_hover_el1 {
+	background: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#CCFD7202', endColorstr='#CCFD7202');
+}
+
+#contact-form input[type='text'] { padding-top: 10px; }
+
+/* Contact Form Processing Box
+========================================================*/
+#contact-form .contact-form-loader { display: none; }
+#contact-form.processing .contact-form-loader { display: block; }
+.inner .item a .fa { display: none !important	; }
+.inner .item a:hover .fa { display: block !important; }
+.inner .item a .magnifier-overlay {	display: none !important; }
+.inner .item a:hover .magnifier-overlay {	display: block !important; }
