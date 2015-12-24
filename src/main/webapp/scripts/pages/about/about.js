@@ -11,8 +11,8 @@ angular.module('sample1App')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/about/about.html',
-                        controller: 'AboutController'
+                        templateUrl: 'scripts/pages/about/about.html',
+                        controller: 'Aboutcontroller'
                     }
                 },
                 resolve: {

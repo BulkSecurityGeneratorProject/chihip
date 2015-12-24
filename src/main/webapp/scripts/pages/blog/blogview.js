@@ -3,16 +3,16 @@
 angular.module('sample1App')
     .config(function ($stateProvider) {
         $stateProvider
-            .state('about', {
+            .state('blogview', {
                 parent: 'site',
-                url: '/about',
+                url: '/blogview',
                 data: {
                     authorities: []
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/about/about.html',
-                        controller: 'AboutController'
+                        templateUrl: 'scripts/pages/blog/blogview.html',
+                        controller: 'BlogviewController'
                     }
                 },
                 resolve: {

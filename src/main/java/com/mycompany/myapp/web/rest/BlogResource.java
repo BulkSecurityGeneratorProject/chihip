@@ -14,6 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.access.annotation.Secured;
+import com.mycompany.myapp.security.AuthoritiesConstants;
 
 import javax.inject.Inject;
 import java.net.URI;
@@ -29,10 +31,10 @@ import java.util.Optional;
 public class BlogResource {
 
     private final Logger log = LoggerFactory.getLogger(BlogResource.class);
-        
+
     @Inject
     private BlogService blogService;
-    
+
     /**
      * POST  /blogs -> Create a new blog.
      */
@@ -76,10 +78,12 @@ public class BlogResource {
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
+
+    @Secured(AuthoritiesConstants.ANONYMOUS)
     public ResponseEntity<List<Blog>> getAllBlogs(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Blogs");
-        Page<Blog> page = blogService.findAll(pageable); 
+        Page<Blog> page = blogService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/blogs");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }

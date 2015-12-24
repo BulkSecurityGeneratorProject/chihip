@@ -1,0 +1,35 @@
+<section id="content">
+   <article class="super-box">
+     <div class="container">
+       <div class="row">
+hello world
+
+  <jh-alert></jh-alert>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="title"><span>Title</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="body"><span>Body</span> <span class="glyphicon glyphicon-sort"></span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="blog in blogs track by blog.id">
+                <td><a ui-sref="blog.detail({id:blog.id})">{{blog.id}}</a></td>
+                <td>{{blog.title}}</td>
+                <td>{{blog.body}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+         <!--=======================-->
+      </div>
+     </div>
+   </article>
+ </section>

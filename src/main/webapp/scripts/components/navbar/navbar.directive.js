@@ -8,6 +8,7 @@ angular.module('sample1App')
                 var $ul = $(element);
                 //$ul.addClass("nav nav-tabs");
                 $ul.addClass("sf-menu");
+                $ul.superfish();
                 var $tabs = $ul.children();
                 var tabMap = {};
                 $tabs.each(function() {

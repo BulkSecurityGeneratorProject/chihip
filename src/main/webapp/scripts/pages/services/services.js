@@ -3,7 +3,7 @@
 angular.module('sample1App')
     .config(function ($stateProvider) {
         $stateProvider
-            .state('servicesview', {
+            .state('services', {
                 parent: 'site',
                 url: '/services',
                 data: {
@@ -11,8 +11,8 @@ angular.module('sample1App')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/servicesview/servicesview.html',
-                        controller: 'ServicesviewController'
+                        templateUrl: 'scripts/pages/services/services.html',
+                        controller: 'ServicesController'
                     }
                 },
                 resolve: {

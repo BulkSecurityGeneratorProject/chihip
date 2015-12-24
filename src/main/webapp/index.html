@@ -24,6 +24,8 @@
         <!-- build:css assets/styles/main.css -->
         <link rel="stylesheet" href="assets/styles/main.css">
         <!-- endbuild -->
+        <script src="//maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
     </head>
     <body ng-app="sample1App">
 
@@ -82,13 +84,14 @@
     <script src="scripts/components/admin/logs.service.js"></script>
     <script src="scripts/components/admin/configuration.service.js"></script>
     <script src="scripts/components/admin/monitoring.service.js"></script>
+    <script src="scripts/components/footer/footer.controller.js"></script>
     <script src="scripts/components/interceptor/auth.interceptor.js"></script>
     <script src="scripts/components/interceptor/errorhandler.interceptor.js"></script>
     <script src="scripts/components/interceptor/notification.interceptor.js"></script>
     <script src="scripts/components/navbar/navbar.directive.js"></script>
     <script src="scripts/components/navbar/navbar.controller.js"></script>
     <script src="scripts/components/navbaradmin/navbaradmin.directive.js"></script>
-    <script src="scripts/components/navbaradmin/navbaradmin.controller.js"></script>    
+    <script src="scripts/components/navbaradmin/navbaradmin.controller.js"></script>
     <script src="scripts/components/user/user.service.js"></script>
     <script src="scripts/components/util/truncate.filter.js"></script>
     <script src="scripts/components/util/base64.service.js"></script>
@@ -99,8 +102,6 @@
     <script src="scripts/components/util/date-util.service.js"></script>
     <script src="scripts/components/util/data-util.service.js"></script>
     <script src="scripts/components/util/sort.directive.js"></script>
-    <script src="scripts/app/about/about.js"></script>
-    <script src="scripts/app/about/about.controller.js"></script>
     <script src="scripts/app/account/account.js"></script>
     <script src="scripts/app/account/activate/activate.js"></script>
     <script src="scripts/app/account/activate/activate.controller.js"></script>
@@ -136,21 +137,26 @@
     <script src="scripts/app/admin/user-management/user-management-delete-dialog.controller.js"></script>
     <script src="scripts/app/admin/user-management/user-management.controller.js"></script>
     <script src="scripts/app/admin/user-management/user-management.js"></script>
-    <script src="scripts/app/contactusview/contactusview.js"></script>
-    <script src="scripts/app/abocontactusviewut/contactusview.controller.js"></script>
     <script src="scripts/app/entities/entity.js"></script>
     <script src="scripts/app/error/error.js"></script>
     <script src="scripts/app/main/main.js"></script>
     <script src="scripts/app/main/main.controller.js"></script>
-    <script src="scripts/app/servicesview/servicesview.js"></script>
-    <script src="scripts/app/servicesview/servicesview.controller.js"></script>
     <script src="scripts/components/auth/services/sessions.service.js"></script>
     <script src="scripts/components/auth/provider/auth.session.service.js"></script>
     <script src="scripts/app/account/sessions/sessions.js"></script>
     <script src="scripts/app/account/sessions/sessions.controller.js"></script>
-    <script src="//maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script src="scripts/pages/about/about.js"></script>
+    <script src="scripts/pages/about/about.controller.js"></script>
+    <script src="scripts/pages/services/services.js"></script>
+    <script src="scripts/pages/services/services.controller.js"></script>
+    <script src="scripts/pages/contactus/contactus.js"></script>
+    <script src="scripts/pages/contactus/contactus.controller.js"></script>
+    <script src="scripts/pages/blog/blogview.js"></script>
+    <script src="scripts/pages/blog/blogview.controller.js"></script>
+
 
     <!--[if (gt IE 9)|!(IE)]><!-->
+    <script src="scripts/superfish.js"></script>
     <script src="scripts/jquery.mobile.customized.min.js"></script>
     <script src="scripts/wow/wow.min.js"></script>
     <script>
@@ -185,13 +191,73 @@
       });
     </script>
 
-
     <script src="scripts/app/entities/blog/blog.js"></script>
     <script src="scripts/app/entities/blog/blog.controller.js"></script>
     <script src="scripts/app/entities/blog/blog-dialog.controller.js"></script>
     <script src="scripts/app/entities/blog/blog-delete-dialog.controller.js"></script>
     <script src="scripts/app/entities/blog/blog-detail.controller.js"></script>
     <script src="scripts/components/entities/blog/blog.service.js"></script>
+
     <!-- endbuild -->
+
+    <script type="text/javascript">
+    function google_api_map_init(){
+      var map;
+      var coordData = new google.maps.LatLng(parseFloat(39.155723), parseFloat(-84.439094,17));
+      var marker;
+
+      var styleArray = [
+      {
+          "stylers": [
+              {
+                  "hue": "#ff1a00"
+              },
+              {
+                  "invert_lightness": true
+              },
+              {
+                  "saturation": -100
+              },
+              {
+                  "lightness": 33
+              },
+              {
+                  "gamma": 0.5
+              }
+          ]
+      },
+      {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [
+              {
+                  "color": "#2D333C"
+              }
+          ]
+      }
+  ]
+
+      function initialize() {
+        var mapOptions = {
+          zoom: 14,
+          center: coordData,
+          scrollwheel: false,
+          styles: styleArray
+        }
+
+        var contentString = "<div></div>";
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString,
+          maxWidth: 200
+        });
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+
+      }
+      google.maps.event.addDomListener(window, "load", initialize);
+    }
+    </script>
+
 </body>
 </html>

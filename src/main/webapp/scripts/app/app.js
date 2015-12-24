@@ -69,6 +69,10 @@ angular.module('sample1App', ['LocalStorageModule',
                 'navbaradmin@': {
                     templateUrl: 'scripts/components/navbaradmin/navbaradmin.html',
                     controller: 'NavbaradminController'
+                },
+                'footer@': {
+                    templateUrl: 'scripts/components/footer/footer.html',
+                    controller: 'FooterController'
                 }
             },
             resolve: {
