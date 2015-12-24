@@ -78,8 +78,6 @@ public class BlogResource {
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-
-    @Secured(AuthoritiesConstants.ANONYMOUS)
     public ResponseEntity<List<Blog>> getAllBlogs(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Blogs");
